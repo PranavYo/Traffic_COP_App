@@ -14,7 +14,7 @@ function Home() {
       <Container>
             <h1 className='text-center'>Traffic Inspector</h1>
             <Row className='my-4'>
-                <Col md={3}>
+                <Col md={4}>
                     <Menu/>
                 </Col>
                 <Col>
