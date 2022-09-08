@@ -10,7 +10,7 @@ function Sos() {
   return (
     <div>
       <Container>
-        <h2 className="text-center">Violation Form</h2>
+        <h2 className="text-center">SOS</h2>
         <Formik initialValues={{}} onSubmit={handleSubmit}>
           <Form>
             <Field
