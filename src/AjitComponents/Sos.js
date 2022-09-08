@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function my() {
+function Sos() {
   return (
     <div>
-      
+      Sos
     </div>
   )
 }
+
+export default Sos

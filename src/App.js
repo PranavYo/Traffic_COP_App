@@ -1,11 +1,12 @@
 import './App.css';
-import Login from './AjitComponents/Login'
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import Home from './AjitComponents/Home';
 
 function App() {
+
   return (
     <div>
-      <Login/>
+        <Home/>
     </div>
   );
 }
