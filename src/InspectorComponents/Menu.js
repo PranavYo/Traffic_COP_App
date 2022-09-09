@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 function Menu() {
   return (
         <ListGroup>
-            {/* <Link to='/' className='list-group-item'>
+            <Link to='/' className='list-group-item'>
                 Home
-            </Link> */}
+            </Link>
             <Link to='/register-violation' className='list-group-item'>
                 Register a Violation
             </Link>

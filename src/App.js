@@ -1,12 +1,12 @@
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import Home from './AjitComponents/Home';
+import Dashboard from './InspectorComponents/Dashboard';
 
 function App() {
 
   return (
     <div>
-        <Home/>
+        <Dashboard/>
     </div>
   );
 }

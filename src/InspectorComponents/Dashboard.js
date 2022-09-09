@@ -2,23 +2,25 @@ import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Menu from './Menu'
+import Home from './Home'
 import RegisterViolation from './RegisterViolation'
 import IssueTicket from './IssueTicket'
 import Sos from './Sos'
 import MedicalHelp from './MedicalHelp'
 
 
-function Home() {
+function Dashboard() {
   return (
     <Router>
       <Container>
             <h1 className='text-center'>Traffic Inspector</h1>
             <Row className='my-4'>
-                <Col md={4}>
+                <Col md={3}>
                     <Menu/>
                 </Col>
                 <Col>
                     <Routes>
+                        <Route path='/' element={<Home/>} />
                         <Route path='/register-violation' element={<RegisterViolation/>} />
                         <Route path='/issue-ticket' element={<IssueTicket/>} />
                         <Route path='/sos' element={<Sos/>} />
@@ -31,4 +33,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Dashboard;
