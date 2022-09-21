@@ -12,23 +12,21 @@ import MedicalHelp from './MedicalHelp'
 function Dashboard() {
   return (
     <Router>
-      <Container>
-            <h1 className='text-center'>Traffic Inspector</h1>
-            <Row className='my-4'>
-                <Col md={3}>
-                    <Menu/>
-                </Col>
-                <Col>
-                    <Routes>
-                        <Route path='/' element={<Home/>} />
-                        <Route path='/register-violation' element={<RegisterViolation/>} />
-                        <Route path='/issue-ticket' element={<IssueTicket/>} />
-                        <Route path='/sos' element={<Sos/>} />
-                        <Route path='/medical-help' element={<MedicalHelp/>} />
-                    </Routes>
-                </Col>
-            </Row>
-      </Container>
+        <h1 className='text-center'>Traffic Inspector</h1>
+        <Row className='m-4'>
+            <Col md={4}>
+                <Menu/>
+            </Col>
+            <Col>
+                <Routes>
+                    <Route path='/' element={<Home/>} />
+                    <Route path='/register-violation' element={<RegisterViolation/>} />
+                    <Route path='/issue-ticket' element={<IssueTicket/>} />
+                    <Route path='/sos' element={<Sos/>} />
+                    <Route path='/medical-help' element={<MedicalHelp/>} />
+                </Routes>
+            </Col>
+        </Row>
     </Router>
   );
 }

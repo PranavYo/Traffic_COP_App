@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 function Menu() {
   return (
+    <>
         <ListGroup>
             <Link to='/' className='list-group-item'>
                 Home
@@ -22,6 +23,7 @@ function Menu() {
                 Register a Medical Emergency
             </Link>
         </ListGroup>
+        </>
 
   );
 }
