@@ -8,8 +8,8 @@ function App() {
 
   return (
     <div>
-       {/*  <Dashboard/> */}
-        <DynamicTable/>
+        <Dashboard/>
+        {/* <DynamicTable/> */}
     </div>
   );
 }

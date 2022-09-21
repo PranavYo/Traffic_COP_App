@@ -3,9 +3,7 @@ import React from 'react'
 export default function Dashboard() {
   return (
     <div>
-        <body>
-    
-    
+        <body>    
     <header class="header">
     
         <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> Medicare </a>
