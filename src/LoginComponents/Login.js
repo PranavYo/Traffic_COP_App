@@ -1,50 +1,41 @@
 import React from "react";
-import { Form, Label, FormGroup, Input, Button, Container } from "reactstrap";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Container } from "reactstrap";
 import { ToastContainer, toast } from "react-toastify";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  useNavigate,
-} from "react-router-dom";
-import Dashboard from "../InspectorComponents/Dashboard";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const notify = (event) => {
     toast("Logged in succesfully");
-    console.log(event)
+    console.log(event);
   };
 
   return (
-    
     <Container>
-      <h1 className="text-center">Login</h1>
+      <h2 className="text-center">Login Page</h2>
       <ToastContainer />
-      <Form>
-        <FormGroup>
-          <Label for="username">Username</Label>
-          <Input
-            id="username"
-            name="email"
-            placeholder="Enter Username"
+      <Formik initialValues={{}} onSubmit={notify}>
+        <Form>
+          <Field
+            className="form-control"
             type="text"
+            placeholder="Enter Username"
+            name="username"
           />
-        </FormGroup>
-        <FormGroup>
-          <Label for="password">Password</Label>
-          <Input
-            id="password"
-            name="password"
-            placeholder="Enter password"
+          <ErrorMessage name="username" component="div" /> <br />
+          <Field
+            className="form-control"
             type="password"
+            placeholder="Enter Password"
+            name="password"
           />
-        </FormGroup>
-        <Button onClick={notify}>Login</Button>
-      </Form>
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
+          <ErrorMessage name="password" component="div" /> <br />
+          <button className="form-control" type="submit" onSubmit={notify}>
+            Submit
+          </button>
+        </Form>
+      </Formik>
     </Container>
   );
 }
