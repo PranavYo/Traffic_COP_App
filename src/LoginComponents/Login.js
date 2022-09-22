@@ -11,9 +11,9 @@ import Dashboard from "../InspectorComponents/Dashboard";
 
 function Login() {
     const navigate = useNavigate();
-  const notify = () => {
+  const notify = (event) => {
     toast("Logged in succesfully");
-    navigate('dashboard')
+    console.log(event)
   };
 
   return (
