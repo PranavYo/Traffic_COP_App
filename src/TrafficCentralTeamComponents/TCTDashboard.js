@@ -11,19 +11,19 @@ function TCTDashboard() {
     <div>
       <Container>
         <h1 className="text-center">Traffic Central Team</h1>
-        <Row className="my-4"></Row>
-        <Col md={3}>
-          <Menu />
-        </Col>
-        <Col>
-          <Routes>
-            <Route path="/location" element={<Location />} />
-            <Route path="/traffic-violations" element={<Violations />} />
-            <Route path="/fine-collection" element={<FineCollected />} />
-          </Routes>
-        </Col>
+        <Row className="my-4">
+          <Col md={3}>
+            <Menu />
+          </Col>
+          <Col>
+            <Routes>
+              <Route path="/location" element={<Location />} />
+              <Route path="/traffic-violations" element={<Violations />} />
+              <Route path="/fine-collection" element={<FineCollected />} />
+            </Routes>
+          </Col>
+        </Row>
       </Container>
-      <h1>welcome</h1>
     </div>
   );
 }
