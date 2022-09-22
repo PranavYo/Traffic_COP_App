@@ -11,7 +11,7 @@ import MedicalHelp from './MedicalHelp'
 
 function Dashboard() {
   return (
-    <Router>
+    <div>
         <h1 className='text-center'>Traffic Inspector</h1>
         <Row className='m-4'>
             <Col md={4}>
@@ -27,7 +27,7 @@ function Dashboard() {
                 </Routes>
             </Col>
         </Row>
-    </Router>
+    </div>
   );
 }
 

@@ -1,16 +1,26 @@
 import React from "react";
-import { Form, Label, FormGroup, Input, Button } from "reactstrap";
-import {ToastContainer, toast} from 'react-toastify'
+import { Form, Label, FormGroup, Input, Button, Container } from "reactstrap";
+import { ToastContainer, toast } from "react-toastify";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
+import Dashboard from "../InspectorComponents/Dashboard";
 
 function Login() {
-
-  const notify = () =>{
+    const navigate = useNavigate();
+  const notify = () => {
     toast("Logged in succesfully");
-  } 
+    navigate('dashboard')
+  };
 
   return (
-    <div>
-      <ToastContainer/>
+    
+    <Container>
+      <h1 className="text-center">Login</h1>
+      <ToastContainer />
       <Form>
         <FormGroup>
           <Label for="username">Username</Label>
@@ -32,7 +42,10 @@ function Login() {
         </FormGroup>
         <Button onClick={notify}>Login</Button>
       </Form>
-    </div>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+    </Container>
   );
 }
 

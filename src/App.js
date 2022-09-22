@@ -1,15 +1,13 @@
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import Dashboard from './MedicalComponents/Dashboard';
-
-import DynamicTable from './TableCreation/DynamicTable';
+import Dashboard from './InspectorComponents/Dashboard.js';
+import Login from './LoginComponents/Login.js'
 
 function App() {
 
   return (
     <div>
         <Dashboard/>
-        {/* <DynamicTable/> */}
     </div>
   );
 }
