@@ -7,19 +7,19 @@ function Menu() {
   return (
     <>
       <ListGroup>
-        <Link to="/" className="list-group-item">
+        <Link to="/inspector" className="list-group-item">
           Home
         </Link>
-        <Link to="/register-violation" className="list-group-item">
+        <Link to="/inspector/register-violation" className="list-group-item">
           Register a Violation
         </Link>
-        <Link to="/issue-ticket" className="list-group-item">
+        <Link to="/inspector/issue-ticket" className="list-group-item">
           Issue a Ticket
         </Link>
-        <Link to="/sos" className="list-group-item">
+        <Link to="/inspector/sos" className="list-group-item">
           SOS
         </Link>
-        <Link to="/medical-help" className="list-group-item">
+        <Link to="/inspector/medical-help" className="list-group-item">
           Register a Medical Emergency
         </Link>
       </ListGroup>

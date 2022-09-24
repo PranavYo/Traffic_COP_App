@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'reactstrap';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes, useParams, useRouteMatch} from 'react-router-dom';
 import Menu from './Menu'
 import Home from './Home'
 import RegisterViolation from './RegisterViolation'

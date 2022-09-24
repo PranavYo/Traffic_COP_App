@@ -2,13 +2,14 @@ import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Dashboard from './InspectorComponents/Dashboard.js';
 import Login from './LoginComponents/Login.js'
-import TCTDashboard from './TrafficCentralTeamComponents/TCTDashboard'
+import TCTDashboard from './TCTComponents/TCTDashboard'
+import Home from './LoginComponents/Home';
 
 function App() {
 
   return (
     <div>
-        <TCTDashboard/>
+        <Home/>
     </div>
   );
 }
