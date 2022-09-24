@@ -4,6 +4,7 @@ import Dashboard from './InspectorComponents/Dashboard.js';
 import Login from './LoginComponents/Login.js'
 import TCTDashboard from './TCTComponents/TCTDashboard'
 import Home from './LoginComponents/Home';
+import DashboardMedical from './MedicalComponents/DashboardMedical';
 
 function App() {
 

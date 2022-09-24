@@ -1,16 +1,44 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { Container } from "reactstrap";
+import * as yup from "yup";
 
 function RegisterViolation() {
   const handleSubmit = (values) => {
     console.log(values);
   };
 
+  const initialValues = {
+    ViolatorsName: "",
+    ViolationType: "",
+    DrivingLicense: "",
+    VechileDetails: "",
+    Date: "",
+    Time: "",
+    Location: "",
+    Other: "",
+  };
+
+  const validationSchema = yup.object({
+    ViolatorsName: yup.string().required(),
+    ViolationType: yup.string().required(),
+    DrivingLicense: yup.string().required(),
+    VechileDetails: yup.string().required(),
+    Date: yup.string().required(),
+    Time: yup.string().required(),
+    Location: yup.string().required(),
+    Other: yup.string().required(),
+  });
+
+
+
   return (
-    <Container>
+    <>
       <h2 className="text-center">Violation Form</h2>
-      <Formik initialValues={{}} onSubmit={handleSubmit}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={validationSchema}
+      >
         <Form>
           <Field
             className="form-control"
@@ -18,49 +46,58 @@ function RegisterViolation() {
             placeholder="Violators Name"
             name="ViolatorsName"
           />
-          <ErrorMessage name="ViolatorsName" component="div" /> <br />
+          <ErrorMessage name="ViolatorsName" component="div" className="text-danger"/> <br />
           <Field
             className="form-control"
             type="text"
             placeholder="Violation Type"
             name="ViolationType"
           />
-          <ErrorMessage name="ViolationType" component="div" /> <br />
+          <ErrorMessage name="ViolationType" component="div" className="text-danger"/> <br />
           <Field
             className="form-control"
             type="text"
             placeholder="Driving License"
             name="DrivingLicense"
           />
-          <ErrorMessage name="DrivingLicense" component="div" /> <br />
+          <ErrorMessage name="DrivingLicense" component="div" className="text-danger"/> <br />
           <Field
             className="form-control"
             type="text"
             placeholder="Vechile Details"
             name="VechileDetails"
           />
-          <ErrorMessage name="VechileDetails" component="div" /> <br />
+          <ErrorMessage name="VechileDetails" component="div" className="text-danger"/> <br />
           <Field
             className="form-control"
-            type="text"
-            placeholder="Date and Time"
-            name="DateAndTime"
+            type="date"
+            placeholder="Date"
+            name="Date"
           />
-          <ErrorMessage name="DateAndTime" component="div" /> <br />
+          <ErrorMessage name="Date" component="div" className="text-danger"/> <br />
+          <Field
+            className="form-control"
+            type="time"
+            placeholder="Time"
+            name="Time"
+          />
+          <ErrorMessage name="Time" component="div" className="text-danger"/> <br />
           <Field
             className="form-control"
             type="text"
             placeholder="Location"
             name="Location"
           />
-          <ErrorMessage name="Location" component="div" /> <br />
+          <ErrorMessage name="Location" component="div" className="text-danger"/> <br />
           <Field
             className="form-control"
             type="text"
             placeholder="Other"
             name="Other"
           />
-          <ErrorMessage name="Other" component="div" /> <br />
+          <ErrorMessage name="Other" component="div" className="text-danger"/> <br />
+
+          
           <button
             className="form-control"
             type="submit"
@@ -70,7 +107,7 @@ function RegisterViolation() {
           </button>
         </Form>
       </Formik>
-    </Container>
+    </>
   );
 }
 

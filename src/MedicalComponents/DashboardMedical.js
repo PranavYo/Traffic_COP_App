@@ -1,4 +1,4 @@
-import React from "react";
+/* import React from "react";
 
 export default function DashboardMedical() {
   return (
@@ -41,3 +41,15 @@ export default function DashboardMedical() {
     </>
   );
 }
+ */
+
+
+import React from 'react'
+
+function DashboardMedical() {
+  return (
+    <div>DashboardMedical</div>
+  )
+}
+
+export default DashboardMedical

@@ -8,14 +8,27 @@ import * as yup from "yup";
 function Login() {
   const navigate = useNavigate();
   const notify = (event) => {
-    toast("Logged in succesfully");
-    console.log(event);
-    navigate('inspector')
+    if (event.username === 'inspector' && event.password === "inspector")
+    {
+      navigate('inspector')
+    }
+    else if (event.username === 'tct' && event.password === "tct")
+    {
+      navigate('tct')
+    }
+    else if (event.username === 'medical' && event.password === "medical")
+    {
+        navigate('medical');
+    }
+    else
+    {
+      navigate('/')
+    }
   };
 
   const validationSchema = yup.object({
     username: yup.string().required("Enter the username").max(10),
-    password: yup.string().required("Enter the password").max(8)
+    password: yup.string().required("Enter the password").max(10)
   });
 
   return (
@@ -23,7 +36,8 @@ function Login() {
       <Row xs="3">
         <Col></Col>
         <Col>
-          <Container className="bg-light border" fluid="md">
+          <br/><br/><br/><br/><br/><br/>
+          <Container className="align-middle bg-light border" fluid="md">
             <h2 className="text-center">Login Page</h2>
             <br />
             <ToastContainer />
