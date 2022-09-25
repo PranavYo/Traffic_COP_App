@@ -5,13 +5,14 @@ import * as yup from "yup";
 function RegisterViolation() {
   const handleSubmit = (values) => {
     console.log(values);
+    
   };
 
   const initialValues = {
     ViolatorsName: "",
     ViolationType: "",
-    DrivingLicense: "",
-    VechileDetails: "",
+    DrivingLicence: "",
+    VehicleDetails: "",
     Date: "",
     Time: "",
     Location: "",
@@ -21,8 +22,8 @@ function RegisterViolation() {
   const validationSchema = yup.object({
     ViolatorsName: yup.string().required(),
     ViolationType: yup.string().required(),
-    DrivingLicense: yup.string().required(),
-    VechileDetails: yup.string().required(),
+    DrivingLicence: yup.string().required(),
+    VehicleDetails: yup.string().required(),
     Date: yup.string().required(),
     Time: yup.string().required(),
     Location: yup.string().required(),
@@ -58,16 +59,16 @@ function RegisterViolation() {
             className="form-control"
             type="text"
             placeholder="Driving License"
-            name="DrivingLicense"
+            name="DrivingLicence"
           />
-          <ErrorMessage name="DrivingLicense" component="div" className="text-danger"/> <br />
+          <ErrorMessage name="DrivingLicence" component="div" className="text-danger"/> <br />
           <Field
             className="form-control"
             type="text"
-            placeholder="Vechile Details"
-            name="VechileDetails"
+            placeholder="Vehicle Details"
+            name="VehicleDetails"
           />
-          <ErrorMessage name="VechileDetails" component="div" className="text-danger"/> <br />
+          <ErrorMessage name="VehicleDetails" component="div" className="text-danger"/> <br />
           <Field
             className="form-control"
             type="date"
