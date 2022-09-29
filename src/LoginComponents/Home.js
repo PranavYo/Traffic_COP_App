@@ -10,10 +10,10 @@ function Home() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/inspector/*" element={<Dashboard />} />
-        <Route path="/tct/*" element={<TCTDashboard />} />
-        <Route path="/medical/*" element={<DashboardMedical />} />
+        <Route exact path="/" element={<Login />} />
+        <Route exact path="/inspector/*" element={<Dashboard />} />
+        <Route exact path="/tct/*" element={<TCTDashboard />} />
+        <Route exact path="/medical/*" element={<DashboardMedical />} />
       </Routes>
     </div>
   );

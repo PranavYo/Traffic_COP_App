@@ -17,8 +17,8 @@ function Dashboard() {
             <Col md={3}>
                 <Menu/>
             </Col>
-            <Col md={1}></Col>
-            <Col md={6}>
+{/*             <Col md={1}></Col>
+ */}            <Col md={6}>
                 <Container className="bg-light border" fluid="md">
                 <Routes>
                     <Route path='/' element={<Home/>} />

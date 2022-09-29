@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import SingleArcheive from "./SingleArcheive";
 import SingleLocation from "./SingleLocation";
 
-function Location() {
+function MedicalLocation() {
   const [locations, setlocations] = useState([
     { id: "1", Location: "Hyd", Help: true, Contact: '7858784784' },
     { id: "1", Location: "Hyd", Help: false, Contact: '7858784784' },
@@ -14,10 +14,9 @@ function Location() {
 
   return (
     <Container >
-      <h1 className="text-center">Location</h1>
       <Row>
         <Col>
-          <h4 className="text-center">SOS</h4>
+          <h3 className="text-center">Help Required Locations</h3>
           {
           locations.length > 0
             ? locations.map((item) => <SingleLocation data={item} />)
@@ -25,7 +24,7 @@ function Location() {
           }
         </Col>
         <Col>
-          <h4 className="text-center">Archeive</h4>
+          <h3 className="text-center">Archeive</h3>
           {
           locations.length > 0
             ? locations.map((item) => <SingleArcheive data={item} />)
@@ -36,4 +35,4 @@ function Location() {
     </Container>
   );
 }
-export default Location;
+export default MedicalLocation;
