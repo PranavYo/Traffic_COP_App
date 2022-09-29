@@ -6,10 +6,10 @@ function SingleFine(props) {
     <div>
       <AccordionItem>
         <AccordionHeader targetId={props.data.id}>
-          {"Fine Collection Data " + props.data.id}
+          {"Violation ID " + props.data.id}
         </AccordionHeader>
         <AccordionBody accordionId={props.data.id}>
-            <li>Violation ID: {props.data.ViolationType}</li>
+            <li>Violation Type: {props.data.ViolationType}</li>
             <li>Fine Amount: {props.data.FineAmount}</li>
             <li>Payment Status: {props.data.PaymentStatus}</li>
             

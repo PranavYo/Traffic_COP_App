@@ -36,7 +36,7 @@ function Login() {
       <Row xs="3">
         <Col></Col>
         <Col>
-          <br/><br/><br/><br/><br/><br/>
+          <br/><br/><br/><br/>
           <Container className="align-middle bg-light border" fluid="md">
             <h2 className="text-center">Login Page</h2>
             <br />

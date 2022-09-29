@@ -13,9 +13,9 @@ function Menu() {
         <Link to="/inspector/register-violation" className="list-group-item">
           Register a Violation
         </Link>
-        <Link to="/inspector/issue-ticket" className="list-group-item">
+        {/* <Link to="/inspector/issue-ticket" className="list-group-item">
           Issue a Ticket
-        </Link>
+        </Link> */}
         <Link to="/inspector/sos" className="list-group-item">
           SOS
         </Link>

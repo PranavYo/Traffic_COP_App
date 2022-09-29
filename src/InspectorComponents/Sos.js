@@ -2,10 +2,20 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Container } from "reactstrap";
 import * as yup from "yup";
+import { ToastContainer, toast } from "react-toastify";
 
 function Sos() {
   const handleSubmit = (values) => {
     console.log(values);
+    toast.success("Asked for COP Help", {
+      position: "top-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+    });
   };
 
 
@@ -19,6 +29,17 @@ function Sos() {
 
   return (
     <div>
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable={false}
+        pauseOnHover={false}
+      />
       <Container>
         <h2 className="text-center">SOS</h2>
         <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={validationSchema}>

@@ -1,10 +1,14 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
+import { useNavigate } from "react-router-dom";
 
 function RegisterViolation() {
-  const handleSubmit = (values) => {
+  const navigate = useNavigate();
+  const handleSubmit = (values, onSubmitProps) => {
     console.log(values);
+    navigate('issue-ticket', {state : values});
+    /* onSubmitProps.resetForm(); */
     
   };
 
@@ -104,7 +108,7 @@ function RegisterViolation() {
             type="submit"
             onSubmit={handleSubmit}
           >
-            Submit
+            Issue a Ticket
           </button>
         </Form>
       </Formik>
