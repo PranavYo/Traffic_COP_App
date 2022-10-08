@@ -14,11 +14,14 @@ import {
 import Location from "./Location";
 import Violations from "./Violations";
 import FineCollected from "./FineCollected";
+import {useAuth} from '../LoginComponents/AuthProvider'
+
 
 function TCTDashboard() {
   const [act, setact] = useState("1");
   const [active1, setactive1] = useState("active");
   const [active2, setactive2] = useState("");
+  let auth = useAuth()
 
   function change() {
     if (act === "1") {
@@ -47,7 +50,13 @@ function TCTDashboard() {
               Violation and Fine Collection Data
             </NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink onClick={auth.logout}>
+              Logout
+            </NavLink>
+          </NavItem>
         </Nav>
+
         <TabContent activeTab={act}>
           <TabPane tabId="1">
             <Location />
@@ -63,6 +72,7 @@ function TCTDashboard() {
             </Row>
           </TabPane>
         </TabContent>
+        
       </div>
     </Container>
   );

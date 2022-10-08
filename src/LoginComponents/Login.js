@@ -4,10 +4,15 @@ import { Container, Row, Col } from "reactstrap";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
+import {useAuth} from './AuthProvider'
+import { useState } from "react";
 
 function Login() {
   const navigate = useNavigate();
+  let auth = useAuth();
+
   const notify = (event) => {
+    auth.login(event.username)
     if (event.username === 'inspector' && event.password === "inspector")
     {
       navigate('inspector')

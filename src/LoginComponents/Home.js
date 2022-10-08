@@ -5,17 +5,19 @@ import DashboardMedical from "../MedicalComponents/DashboardMedical";
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 import Login from "./Login";
+import {AuthProvider} from "./AuthProvider";
+import RequiredAuth from "./RequiredAuth";
 
 function Home() {
   return (
-    <div>
+    <AuthProvider>
       <Routes>
         <Route exact path="/" element={<Login />} />
-        <Route exact path="/inspector/*" element={<Dashboard />} />
-        <Route exact path="/tct/*" element={<TCTDashboard />} />
-        <Route exact path="/medical/*" element={<DashboardMedical />} />
+        <Route exact path="/inspector/*" element={<RequiredAuth><Dashboard /> </RequiredAuth>} />
+        <Route exact path="/tct/*" element={<RequiredAuth><TCTDashboard /></RequiredAuth>} />
+        <Route exact path="/medical/*" element={<RequiredAuth><DashboardMedical /> </RequiredAuth>} />
       </Routes>
-    </div>
+    </AuthProvider>
   );
 }
 

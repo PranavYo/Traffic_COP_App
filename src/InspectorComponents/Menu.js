@@ -1,9 +1,12 @@
 import React from "react";
-import { ListGroup } from "reactstrap";
-
+import { ListGroup, ListGroupItem } from "reactstrap";
 import { Link } from "react-router-dom";
+import {useAuth} from '../LoginComponents/AuthProvider'
+
 
 function Menu() {
+  let auth = useAuth()
+  
   return (
     <>
       <ListGroup>
@@ -22,6 +25,9 @@ function Menu() {
         <Link to="/inspector/medical-help" className="list-group-item">
           Register a Medical Emergency
         </Link>
+        <ListGroupItem tag="button" onClick={auth.logout} className="list-group-item">
+          Logout
+        </ListGroupItem>
       </ListGroup>
     </>
   );
