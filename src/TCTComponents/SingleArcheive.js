@@ -4,15 +4,15 @@ import { Card, CardHeader, CardFooter } from "reactstrap";
 function SingleArcheive(props) {
   return (
     <>
-      {props.data.Help === false ? (
+      {props.data.helpSent === true ? (
         <>
           <Card>
             <CardHeader className="text-center">
               Location {props.data.id}
             </CardHeader>
             <CardFooter>
-              <li> Location: {props.data.Location}</li>
-              <li> Contact: {props.data.Contact}</li>
+              <li> Location: {props.data.location}</li>
+              <li> Contact: {props.data.contact}</li>
             </CardFooter>
           </Card>
           <br />

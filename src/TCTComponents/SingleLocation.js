@@ -7,7 +7,7 @@ function SingleLocation(props) {
   }
   return (
     <>
-      {props.data.Help === true ? (
+      {props.data.helpSent === false ? (
         <>
           <Card>
             <CardHeader className="text-center">
@@ -16,9 +16,10 @@ function SingleLocation(props) {
             <CardFooter>
               <Row>
                 <Col>
-                  <li>Location: {props.data.Location}</li>
-                  <li>Contact: {props.data.Contact}</li>
+                  <li>Location: {props.data.location}</li>
+                  <li>Contact: {props.data.contact}</li>
                 </Col>
+                
                 <Col>
                   <Button className="center" onClick={archieve}>
                     Send Help

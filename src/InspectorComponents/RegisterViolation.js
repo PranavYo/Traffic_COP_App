@@ -5,36 +5,33 @@ import { useNavigate } from "react-router-dom";
 
 function RegisterViolation() {
   const navigate = useNavigate();
+  
   const handleSubmit = (values, onSubmitProps) => {
-    console.log(values);
-    navigate('issue-ticket', {state : values});
-    /* onSubmitProps.resetForm(); */
-    
+    console.log(values)
+    navigate("issue-ticket", { state: values });
   };
 
   const initialValues = {
-    ViolatorsName: "",
-    ViolationType: "",
-    DrivingLicence: "",
-    VehicleDetails: "",
-    Date: "",
-    Time: "",
-    Location: "",
-    Other: "",
+    violatorsName: "",
+    violationType: "",
+    drivingLicence: "",
+    vehicleDetails: "",
+    date: "",
+    time: "",
+    location: "",
+    other: ""
   };
 
   const validationSchema = yup.object({
-    ViolatorsName: yup.string().required(),
-    ViolationType: yup.string().required(),
-    DrivingLicence: yup.string().required(),
-    VehicleDetails: yup.string().required(),
-    Date: yup.string().required(),
-    Time: yup.string().required(),
-    Location: yup.string().required(),
-    Other: yup.string().required(),
+    violatorsName: yup.string().required(),
+    violationType: yup.string().required(),
+    drivingLicence: yup.string().required(),
+    vehicleDetails: yup.string().required(),
+    date: yup.string().required(),
+    time: yup.string().required(),
+    location: yup.string().required(),
+    other: yup.string().required(),
   });
-
-
 
   return (
     <>
@@ -49,60 +46,86 @@ function RegisterViolation() {
             className="form-control"
             type="text"
             placeholder="Violators Name"
-            name="ViolatorsName"
+            name="violatorsName"
           />
-          <ErrorMessage name="ViolatorsName" component="div" className="text-danger"/> <br />
+          <ErrorMessage
+            name="violatorsName"
+            component="div"
+            className="text-danger"
+          />{" "}
+          <br />
           <Field
             className="form-control"
             type="text"
             placeholder="Violation Type"
-            name="ViolationType"
+            name="violationType"
           />
-          <ErrorMessage name="ViolationType" component="div" className="text-danger"/> <br />
+          <ErrorMessage
+            name="violationType"
+            component="div"
+            className="text-danger"
+          />{" "}
+          <br />
           <Field
             className="form-control"
             type="text"
             placeholder="Driving License"
-            name="DrivingLicence"
+            name="drivingLicence"
           />
-          <ErrorMessage name="DrivingLicence" component="div" className="text-danger"/> <br />
+          <ErrorMessage
+            name="drivingLicence"
+            component="div"
+            className="text-danger"
+          />{" "}
+          <br />
           <Field
             className="form-control"
             type="text"
             placeholder="Vehicle Details"
-            name="VehicleDetails"
+            name="vehicleDetails"
           />
-          <ErrorMessage name="VehicleDetails" component="div" className="text-danger"/> <br />
+          <ErrorMessage
+            name="vehicleDetails"
+            component="div"
+            className="text-danger"
+          />{" "}
+          <br />
           <Field
             className="form-control"
             type="date"
-            placeholder="Date"
-            name="Date"
+            placeholder="date"
+            name="date"
           />
-          <ErrorMessage name="Date" component="div" className="text-danger"/> <br />
+          <ErrorMessage name="date" component="div" className="text-danger" />{" "}
+          <br />
           <Field
             className="form-control"
             type="time"
-            placeholder="Time"
-            name="Time"
+            placeholder="time"
+            name="time"
           />
-          <ErrorMessage name="Time" component="div" className="text-danger"/> <br />
+          <ErrorMessage name="time" component="div" className="text-danger" />{" "}
+          <br />
           <Field
             className="form-control"
             type="text"
-            placeholder="Location"
-            name="Location"
+            placeholder="location"
+            name="location"
           />
-          <ErrorMessage name="Location" component="div" className="text-danger"/> <br />
+          <ErrorMessage
+            name="location"
+            component="div"
+            className="text-danger"
+          />{" "}
+          <br />
           <Field
             className="form-control"
             type="text"
-            placeholder="Other"
-            name="Other"
+            placeholder="other"
+            name="other"
           />
-          <ErrorMessage name="Other" component="div" className="text-danger"/> <br />
-
-          
+          <ErrorMessage name="other" component="div" className="text-danger" />{" "}
+          <br />
           <button
             className="form-control"
             type="submit"

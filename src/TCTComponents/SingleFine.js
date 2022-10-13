@@ -9,9 +9,9 @@ function SingleFine(props) {
           {"Violation ID " + props.data.id}
         </AccordionHeader>
         <AccordionBody accordionId={props.data.id}>
-            <li>Violation Type: {props.data.ViolationType}</li>
-            <li>Fine Amount: {props.data.FineAmount}</li>
-            <li>Payment Status: {props.data.PaymentStatus}</li>
+            <li>Violation Type: {props.data.violationType}</li>
+            <li>Fine Amount: {props.data.fineAmount}</li>
+            <li>Payment Status: {(props.data.paid)? "paid": "not paid"}</li>
             
         </AccordionBody>
       </AccordionItem>

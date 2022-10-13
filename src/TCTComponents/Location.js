@@ -2,19 +2,37 @@ import React, { useState } from "react";
 import { Container, Row, Col } from "reactstrap";
 import SingleArcheive from "./SingleArcheive";
 import SingleLocation from "./SingleLocation";
+import axios from "axios";
+import { useEffect } from "react";
+import base_url from "../base_url";
+
 
 function Location() {
-  const [locations, setlocations] = useState([
-    { id: "1", Location: "Hyd", Help: true, Contact: '7858784784' },
-    { id: "1", Location: "Hyd", Help: false, Contact: '7858784784' },
-    { id: "1", Location: "Hyd", Help: false, Contact: '7858784784' },
-    { id: "1", Location: "Hyd", Help: true, Contact: '7858784784' },
-    { id: "1", Location: "Hyd", Help: true, Contact: '7858784784' },
-  ]);
+
+  useEffect(() => {
+    //document.title = 'Traffic Central Team Dashboard'
+    getAllLocations()
+  }, [])
+  
+  const getAllLocations=()=>
+  {
+    axios.get(`${base_url}/getlocations`).then(
+      (response) => {
+        setlocations(response.data)
+        console.log(response.data, 'here')
+      },
+      (error) => {
+        console.log('data not loaded')
+      }
+    )
+  }
+
+  const [locations, setlocations] = useState([]);
 
   return (
     <Container >
-      <h1 className="text-center">Location</h1>
+
+      <h1 className="text-center p-3 mb-2 bg-success text-white"  onClick={getAllLocations}>Location</h1>
       <Row>
         <Col>
           <h4 className="text-center">SOS</h4>

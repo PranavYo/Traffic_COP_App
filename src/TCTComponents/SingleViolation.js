@@ -11,13 +11,13 @@ function SingleViolation(props) {
         </AccordionHeader>
         <AccordionBody accordionId={props.data.id}>
             <li><b>Violation ID: </b> {props.data.id}</li>
-            <li><b>Violators Name: </b> {props.data.ViolatorsName}</li>
-            <li><b>Violation Type: </b> {props.data.ViolationType}</li>
-            <li><b>Driving License: </b> {props.data.DrivingLicence}</li>
-            <li><b>Vehicle Details: </b> {props.data.VehicleDetails}</li>
-            <li><b>Date and Time: </b> {props.data.Date + ' ' + props.data.Time}</li>
-            <li><b>Location: </b> {props.data.Location}</li>
-            <li><b>Other: </b> {props.data.Other}</li>
+            <li><b>Violators Name: </b> {props.data.violatorsName}</li>
+            <li><b>Violation Type: </b> {props.data.violationType}</li>
+            <li><b>Driving License: </b> {props.data.drivingLicence}</li>
+            <li><b>Vehicle Details: </b> {props.data.vehicleDetails}</li>
+            <li><b>Date and Time: </b> {props.data.date + ' ' + props.data.time}</li>
+            <li><b>Location: </b> {props.data.location}</li>
+            <li><b>Other: </b> {props.data.other}</li>
         </AccordionBody>
       </AccordionItem>
     </div>

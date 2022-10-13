@@ -1,18 +1,37 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Container, Row, Col } from "reactstrap";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import {useAuth} from './AuthProvider'
 import { useState } from "react";
+import axios from "axios";
+import base_url from "../base_url";
 
 function Login() {
   const navigate = useNavigate();
   let auth = useAuth();
 
+  const [user, setuser] = useState(null);
+  
   const notify = (event) => {
-    auth.login(event.username)
+    axios.get(`${base_url}/valid/${event.username}/${event.password}`).then(
+      (response) =>{
+        if (response.data != null) {
+          setuser(response.data)
+          auth.login(response.data.username)
+          navigate(response.data.username)
+        } else {
+          navigate('/')
+        }
+      },
+      (error) =>{
+        console.log(error)
+      }
+    )
+
+    /* auth.login(event.username)
     if (event.username === 'inspector' && event.password === "inspector")
     {
       navigate('inspector')
@@ -28,7 +47,7 @@ function Login() {
     else
     {
       navigate('/')
-    }
+    }  */
   };
 
   const validationSchema = yup.object({

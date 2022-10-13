@@ -23,17 +23,18 @@ function TCTDashboard() {
   const [active2, setactive2] = useState("");
   let auth = useAuth()
 
-  function change() {
-    if (act === "1") {
+  function change2() {
       setact("2");
       setactive2("active");
       setactive1("");
-    } else {
+    } 
+
+  function change1(){
       setact("1");
       setactive1("active");
       setactive2("");
     }
-  }
+
 
   return (
     <Container className="bg-light border" fluid="md">
@@ -41,12 +42,12 @@ function TCTDashboard() {
       <div>
         <Nav tabs>
           <NavItem>
-            <NavLink className={active1} onClick={change}>
+            <NavLink className={active1} onClick={change1}>
               SOS Locations
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink className={active2} onClick={change}>
+            <NavLink className={active2} onClick={change2}>
               Violation and Fine Collection Data
             </NavLink>
           </NavItem>

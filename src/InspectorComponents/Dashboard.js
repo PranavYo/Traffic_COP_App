@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Menu from "./Menu";
 import Home from "./Home";
 import RegisterViolation from "./RegisterViolation";
@@ -9,6 +9,7 @@ import Sos from "./Sos";
 import MedicalHelp from "./MedicalHelp";
 
 function Dashboard() {
+
   return (
     <div>
       <h1 className="text-center">Traffic Inspector</h1>

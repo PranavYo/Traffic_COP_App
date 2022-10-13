@@ -4,27 +4,39 @@ import { Container } from "reactstrap";
 import * as yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
 
+import axios from "axios";
+import base_url from "../base_url";
+
 function Sos() {
-  const handleSubmit = (values) => {
-    console.log(values);
+  const handleSubmit = (values, onSubmitProps) => {
+
+    values["helpSent"] = false;
+    axios.post(`${base_url}/addlocation`, values).then(
+      (response) =>{
+        console.log(response.data)
+        console.log(values)
+      },
+
+      (error) => {
+        console.log(error)
+      }
+    )
+    
+    onSubmitProps.resetForm();
+
     toast.success("Asked for COP Help", {
       position: "top-right",
       autoClose: 1500,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: false,
-      draggable: false,
-      progress: undefined,
     });
   };
 
 
   const initialValues = {
-    Location: "",
+    location: "",
   };
 
   const validationSchema = yup.object({
-    Location: yup.string().required(),
+    location: yup.string().required(),
   });
 
   return (
@@ -47,10 +59,10 @@ function Sos() {
             <Field
               className="form-control"
               type="text"
-              placeholder="Location"
-              name="Location"
+              placeholder="location"
+              name="location"
             />
-            <ErrorMessage name="Location" component="div" className="text-danger"/> <br />
+            <ErrorMessage name="location" component="div" className="text-danger"/> <br />
             
             <button
               className="form-control"
